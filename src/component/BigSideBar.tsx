@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
+import NavLinks from "./NavLinks";
 
 const BigSidebar = () => {
-    const { Show } = useAppContext();
+    const { Show ,ToggleShow} = useAppContext();
     return (
       <Wrapper>
         <div
@@ -14,6 +15,7 @@ const BigSidebar = () => {
             <header>
               <h1 className='text-[60px]' >HELLO</h1>
             </header>
+            <NavLinks ToggleShow={ToggleShow} />
         
           </div>
   
@@ -40,7 +42,14 @@ const Wrapper = styled.aside`
     }
     .content {
       position: sticky;
-      top: 0;
+      border-radius : 25px;
+      background-color: white;
+      width : 300px;
+      min-height: calc(100vh - 50px);
+      max-height: 100vh;
+      position: sticky;
+      top: 25px;
+      left:25px
     }
     .show-sidebar {
       margin-left: 0;

@@ -1,7 +1,7 @@
 
 import Sidebar from './component/Sidebar'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -13,6 +13,7 @@ function App() {
 
           <Route path="/" element={<Home />} />
         </Route>
+        {/* <Route path='*' element={<Navigate to="/" replace />}  /> */}
       </Routes>
     </BrowserRouter>
     </>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
+import NavLinks from "./NavLinks";
 
 const SmallSidebar = () => {
     const { Show, ToggleShow } = useAppContext();
@@ -10,14 +11,14 @@ const SmallSidebar = () => {
         }>
           <div className='content'>
             <button className='close-btn' onClick={ToggleShow}>
-             X
+            <i className='bx bx-x'></i>
             </button>
             <header>
             <h1 className='text-[60px]' >HELLO</h1>
             </header>
             <div className='nav-links'>
-              {/* <NavLinks toggleSidebar={ToggleShow}>
-              </NavLinks> */}
+              <NavLinks ToggleShow={ToggleShow}>
+              </NavLinks>
             </div>
           </div>
         </div>
