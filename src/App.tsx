@@ -1,15 +1,29 @@
-// import { useState } from 'react'
-import Sidebar from './component/sidebar'
+
+import Sidebar from './component/Sidebar'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Sidebar />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Sidebar />} >
+
+          <Route path="/" element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
 
+const Home = ()=>{
+  return(
+    <div  >
+      <h1>Home</h1>
+    </div>
+  )
+}
 export default App
