@@ -5,16 +5,16 @@
 
 :root {
     /* colors */
-    --primary-50: #e0fcff;
-    --primary-100: #bef8fd;
-    --primary-200: #87eaf2;
-    --primary-300: #54d1db;
-    --primary-400: #38bec9;
-    --primary-500: #2cb1bc;
-    --primary-600: #14919b;
-    --primary-700: #0e7c86;
-    --primary-800: #0a6c74;
-    --primary-900: #044e54;
+    --primary-50: #f4eeff;
+    --primary-100: #efe6ff;
+    --primary-200: #ddcafe;
+    --primary-300: #9155fd;
+    --primary-400: #834de4;
+    --primary-500: #7444ca;
+    --primary-600: #6d40be;
+    --primary-700: #573398;
+    --primary-800: #412672;
+    --primary-900: #331e59;
   
     /* grey */
     --grey-50: #f8fafc;
@@ -45,7 +45,8 @@
     --max-width: 1120px;
     --fixed-width: 600px;
     --fluid-width: 90vw;
-    --nav-height: 6rem;
+    /* --nav-height: 6rem; */
+    --nav-height: 100px;
     /* box shadow*/
     --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
