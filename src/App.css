@@ -1,6 +1,10 @@
-.body{
+.body {
     /* position: relative; */
     background-color: blueviolet;
     top:66px;
     
+}
+
+.overflow-x-scroll::-webkit-scrollbar, .overflow-y-scroll::-webkit-scrollbar{
+    display: none;
 }

@@ -12,7 +12,7 @@ const Sidebar = () => {
         <BigSidebar />
         <div>
           <Navbar />
-          <div className='dashboard-page'>
+          <div className='dashboard-page overflow-y-scroll'>
             <Outlet />
           </div>
         </div>
@@ -31,6 +31,9 @@ background: var(--background-secondary-color);
     width: 90vw;
     margin: 0 auto;
     padding: 2rem 0;
+    max-height: 100vh;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
   }
   @media (min-width: 992px) {
     .dashboard {

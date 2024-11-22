@@ -17,7 +17,7 @@ const Navbar = () => {
         </div>
 
         <div className="menus">
-          <button className="bg-[rgb(254,104,104)] bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center">
+          <button className="bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center">
             <i className='bx bxs-circle text-[10px] mr-[3px]' ></i>
             Live
           </button>
@@ -36,13 +36,14 @@ const Navbar = () => {
 }
 export default Navbar
 
+// box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);  stayling of defualt styled nav
 
 const Wrapper = styled.nav`
 height: var(--nav-height);
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+
 background: var(--background-secondary-color);
 .nav-center {
   display: flex;

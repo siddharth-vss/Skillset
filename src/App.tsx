@@ -2,6 +2,7 @@
 import Sidebar from './component/Sidebar'
 import './App.css'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Home,LiveClass, } from './pages'
 
 function App() {
 
@@ -11,20 +12,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Sidebar />} >
 
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path='live' element={<LiveClass />} />
+          {/* <Route path="about" element={<About />} /> */}
         </Route>
-        {/* <Route path='*' element={<Navigate to="/" replace />}  /> */}
+        <Route path='*' element={<Navigate to="/" replace />}  />
       </Routes>
     </BrowserRouter>
     </>
   )
 }
 
-const Home = ()=>{
-  return(
-    <div  >
-      <h1>Home</h1>
-    </div>
-  )
-}
 export default App

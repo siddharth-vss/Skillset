@@ -3,35 +3,38 @@ import { useAppContext } from "../context/appContext";
 import NavLinks from "./NavLinks";
 
 const BigSidebar = () => {
-    const { Show ,ToggleShow} = useAppContext();
-    return (
-      <Wrapper>
-        <div
-          className={
-            Show ? 'sidebar-container ' : 'sidebar-container show-sidebar'
-          }
-        >
-          <div className='content'>
-            <header>
-              <h1 className='text-[60px]' >HELLO</h1>
-            </header>
+  const { Show, ToggleShow } = useAppContext();
+  return (
+    <Wrapper>
+      <div
+        className={
+          Show ? 'sidebar-container ' : 'sidebar-container show-sidebar'
+        }
+      >
+        <div className='content'>
+          <header>
+            <h1 className='text-[60px]' >HELLO</h1>
+          </header>
+          <div className="h-[500px] overflow-y-scroll" >
             <NavLinks ToggleShow={ToggleShow} />
-        
           </div>
-  
+
         </div>
-      </Wrapper>
-    )
-  }
+
+      </div>
+    </Wrapper>
+  )
+}
 
 export default BigSidebar
 
-
+// box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+// in  || @media (min-width: 992px) { || with display: block;
 const Wrapper = styled.aside`
     display: none;
   @media (min-width: 992px) {
     display: block;
-    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    
     .sidebar-container {
       background: var(--background-secondary-color);
       min-height: 100vh;

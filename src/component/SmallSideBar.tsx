@@ -16,7 +16,7 @@ const SmallSidebar = () => {
             <header>
             <h1 className='text-[60px]' >HELLO</h1>
             </header>
-            <div className='nav-links'>
+            <div className='nav-links h-[400px] overflow-y-scroll'>
               <NavLinks ToggleShow={ToggleShow}>
               </NavLinks>
             </div>
