@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 import NavLinks from "./NavLinks";
+import Logo from "./Logo";
 
 const BigSidebar = () => {
   const { Show, ToggleShow } = useAppContext();
@@ -13,9 +14,9 @@ const BigSidebar = () => {
       >
         <div className='content'>
           <header>
-            <h1 className='text-[60px]' >HELLO</h1>
+            <Logo />
           </header>
-          <div className="h-[500px] overflow-y-scroll" >
+          <div className="h-[500px] mt-[30px] overflow-y-scroll" >
             <NavLinks ToggleShow={ToggleShow} />
           </div>
 
@@ -79,7 +80,8 @@ const Wrapper = styled.aside`
     }
     .nav-link:hover {
       padding-left: 3rem;
-      color: var(--primary-500);
+      border-left: 3px solid  var(--primary-200);
+      color: var(--primary-400);
       transition: var(--transition);
     }
     .icon {
@@ -90,6 +92,8 @@ const Wrapper = styled.aside`
     }
     .active {
       color: var(--primary-500);
+      padding-left: 3rem;
+      border-left: 3px solid  var(--primary-500);
     }
     .pending {
       background: var(--background-color);

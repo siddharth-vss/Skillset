@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { ToggleShow } = useAppContext();
@@ -17,10 +18,14 @@ const Navbar = () => {
         </div>
 
         <div className="menus">
-          <button className="bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center">
+          <NavLink
+            to={'live'}
+            // onClick={ToggleShow}
+            className="bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center"
+          >
             <i className='bx bxs-circle text-[10px] mr-[3px]' ></i>
             Live
-          </button>
+          </NavLink>
           <i className='bx bx-moon text-[20px] text-[#8C8DF3]'></i>
           <i className='bx bx-bell text-[20px] text-[#8C8DF3]' ></i>
           <img src="https://res.cloudinary.com/dabh5hsuk/image/upload/v1725365097/unknown_artist_wlofav.jpg" className="img" alt="user" />
@@ -29,7 +34,7 @@ const Navbar = () => {
         <div className="phone" >
           <div onClick={ToggleShow} className="text-[40px] text-[#8C8DF3]"><i className='bx bx-menu'></i></div>
         </div>
-        
+
       </div>
     </Wrapper>
   )

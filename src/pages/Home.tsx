@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import i1 from '../assets/i3.jpg';
-const list = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const list = [1, 10, 11, 101, 110, 111, 1001, 1011, 1101, 1111, 10101, 10110, 10111, 10011, 11011];
 const Home = () => {
   return (
     <Wrapper>

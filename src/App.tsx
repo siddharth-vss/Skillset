@@ -2,7 +2,7 @@
 import Sidebar from './component/Sidebar'
 import './App.css'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { Home,LiveClass, } from './pages'
+import { Home,LiveClass,Attendence,Cources,Payments,Students,Teachers } from './pages'
 
 function App() {
 
@@ -14,6 +14,11 @@ function App() {
 
           <Route index element={<Home />} />
           <Route path='live' element={<LiveClass />} />
+          <Route path="stdents" element={<Students />} />
+          <Route path="teachers" element={<Teachers />} />
+          <Route path="cources" element={<Cources />} />
+          <Route path="attendence" element={<Attendence />} />
+          <Route path="payments" element={<Payments />} />
           {/* <Route path="about" element={<About />} /> */}
         </Route>
         <Route path='*' element={<Navigate to="/" replace />}  />
