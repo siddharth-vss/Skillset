@@ -86,7 +86,7 @@ const BigSidebar = () => {
             <Logo />
           </header>
           <div className="h-[500px] mt-[30px] overflow-y-scroll" >
-            <NavLinks ToggleShow={ToggleShow} />
+            <NavLinks />
           </div>
 
         </div>

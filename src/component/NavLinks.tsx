@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import {links} from '../assets/data'
 
-const NavLinks = ({ ToggleShow }: { ToggleShow: () => void }) => {
+const NavLinks = () => {
   return (
     <div className='nav-links'>
       {links.map((link) => {
