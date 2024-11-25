@@ -4,7 +4,7 @@ import NavLinks from "./NavLinks";
 import Logo from "./Logo";
 
 const BigSidebar = () => {
-  const { Show, ToggleShow,Mode } = useAppContext();
+  const { Show,Mode } = useAppContext();
   const Wrapper = styled.aside`
     display: none;
   @media (min-width: 992px) {
