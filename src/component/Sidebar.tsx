@@ -3,26 +3,14 @@ import BigSidebar from './BigSideBar'
 import SmallSideBar from './SmallSideBar'
 import Navbar from './Navbar'
 import styled from 'styled-components'
+import { useAppContext } from '../context/appContext'
 
 const Sidebar = () => {
-  return (
-    <Wrapper>
-      <main className='dashboard'>
-        <SmallSideBar />
-        <BigSidebar />
-        <div>
-          <Navbar />
-          <div className='dashboard-page overflow-y-scroll'>
-            <Outlet />
-          </div>
-        </div>
-      </main>
-    </Wrapper>
-  )
-}
-export default Sidebar;
-const Wrapper = styled.section`
-background: var(--background-secondary-color);
+  const { Mode } = useAppContext();
+  const Wrapper = styled.section`
+  
+color:${ Mode === 'dark' ? 'var(--text-color)':'var(--text-secondary-color)'};
+background:${ Mode === 'dark' ? 'var(--background-color)':'var(--background-secondary-color)'};
   .dashboard {
     display: grid;
     grid-template-columns: 1fr;
@@ -43,4 +31,21 @@ background: var(--background-secondary-color);
       width: 90%;
     }
   }
-`
+`;
+
+  return (
+    <Wrapper>
+      <main className='dashboard'>
+        <SmallSideBar />
+        <BigSidebar />
+        <div>
+          <Navbar />
+          <div className='dashboard-page overflow-y-scroll'>
+            <Outlet />
+          </div>
+        </div>
+      </main>
+    </Wrapper>
+  )
+}
+export default Sidebar;

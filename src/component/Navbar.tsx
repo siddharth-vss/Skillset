@@ -3,53 +3,14 @@ import { useAppContext } from "../context/appContext";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const { ToggleShow } = useAppContext();
-  return (
-    <Wrapper>
-      <div className='nav-center'>
-
-        <div className="window" >
-          <div onClick={ToggleShow} className="text-[40px] text-[#8C8DF3]"><i className='bx bx-menu'></i></div>
-          <input placeholder={` ${'\u{1F50D}'} Search`} className="searchbox" type="text" name="search" />
-        </div>
-
-        <div className="logo">
-          <img src="https://res.cloudinary.com/dabh5hsuk/image/upload/v1725365097/unknown_artist_wlofav.jpg" className="img" alt="user" />
-        </div>
-
-        <div className="menus">
-          <NavLink
-            to={'live'}
-            // onClick={ToggleShow}
-            className="bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center"
-          >
-            <i className='bx bxs-circle text-[10px] mr-[3px]' ></i>
-            Live
-          </NavLink>
-          <i className='bx bx-moon text-[20px] text-[#8C8DF3]'></i>
-          <i className='bx bx-bell text-[20px] text-[#8C8DF3]' ></i>
-          <img src="https://res.cloudinary.com/dabh5hsuk/image/upload/v1725365097/unknown_artist_wlofav.jpg" className="img" alt="user" />
-        </div>
-
-        <div className="phone" >
-          <div onClick={ToggleShow} className="text-[40px] text-[#8C8DF3]"><i className='bx bx-menu'></i></div>
-        </div>
-
-      </div>
-    </Wrapper>
-  )
-}
-export default Navbar
-
-// box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);  stayling of defualt styled nav
-
-const Wrapper = styled.nav`
+  const { ToggleShow,ToggleMode,Mode } = useAppContext();
+  const Wrapper = styled.nav`
 height: var(--nav-height);
 display: flex;
 align-items: center;
 justify-content: center;
 
-background: var(--background-secondary-color);
+background:${ Mode === 'dark' ? 'var(--background-color)':'var(--background-secondary-color)'};
 .nav-center {
   display: flex;
   width: 90vw;
@@ -58,7 +19,7 @@ background: var(--background-secondary-color);
 }
 
 .searchbox{
-  background : white;
+  background:${ Mode === 'dark' ? 'var(--background-box-color)':'var(--background-secondary-box-color)'};
   height:40px;
   width:300px;
   border-radius: 15px;
@@ -146,3 +107,46 @@ background: var(--background-secondary-color);
     }
 }
 `;
+  return (
+    <Wrapper>
+      <div className='nav-center'>
+
+        <div className="window" >
+          <div onClick={ToggleShow} className="text-[40px] text-[#8C8DF3]"><i className='bx bx-menu'></i></div>
+          <input placeholder={` ${'\u{1F50D}'} Search`} className="searchbox" type="text" name="search" />
+        </div>
+
+        <div className="logo">
+          <img src="https://res.cloudinary.com/dabh5hsuk/image/upload/v1725365097/unknown_artist_wlofav.jpg" className="img" alt="user" />
+        </div>
+
+        <div className="menus">
+          <NavLink
+            to={'live'}
+            // onClick={ToggleShow}
+            className="bg-gradient-to-b from-[#ff6a6a] to-[#fb4b4b] w-[70px] h-[30px] text-white text-[20px] rounded-[10px] flex justify-center items-center"
+          >
+            <i className='bx bxs-circle text-[10px] mr-[3px]' ></i>
+            Live
+          </NavLink>
+          <i onClick={ToggleMode} className='bx bx-moon text-[20px] text-[#8C8DF3]'></i>
+          <i className='bx bx-bell text-[20px] text-[#8C8DF3]' ></i>
+          <NavLink
+            to={'profile'}
+          >
+            <img src="https://res.cloudinary.com/dabh5hsuk/image/upload/v1725365097/unknown_artist_wlofav.jpg" className="img" alt="user" />
+          </NavLink>
+        </div>
+
+        <div className="phone" >
+          <div onClick={ToggleShow} className="text-[40px] text-[#8C8DF3]"><i className='bx bx-menu'></i></div>
+        </div>
+
+      </div>
+    </Wrapper>
+  )
+}
+export default Navbar
+
+// box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);  stayling of defualt styled nav
+

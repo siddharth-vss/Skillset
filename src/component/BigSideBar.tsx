@@ -4,40 +4,14 @@ import NavLinks from "./NavLinks";
 import Logo from "./Logo";
 
 const BigSidebar = () => {
-  const { Show, ToggleShow } = useAppContext();
-  return (
-    <Wrapper>
-      <div
-        className={
-          Show ? 'sidebar-container ' : 'sidebar-container show-sidebar'
-        }
-      >
-        <div className='content'>
-          <header>
-            <Logo />
-          </header>
-          <div className="h-[500px] mt-[30px] overflow-y-scroll" >
-            <NavLinks ToggleShow={ToggleShow} />
-          </div>
-
-        </div>
-
-      </div>
-    </Wrapper>
-  )
-}
-
-export default BigSidebar
-
-// box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
-// in  || @media (min-width: 992px) { || with display: block;
-const Wrapper = styled.aside`
+  const { Show, ToggleShow,Mode } = useAppContext();
+  const Wrapper = styled.aside`
     display: none;
   @media (min-width: 992px) {
     display: block;
     
     .sidebar-container {
-      background: var(--background-secondary-color);
+      background:${ Mode === 'dark' ? 'var(--background-color)':'var(--background-secondary-color)'};
       min-height: 100vh;
       height: 100%;
       width: 350px;
@@ -47,7 +21,7 @@ const Wrapper = styled.aside`
     .content {
       position: sticky;
       border-radius : 25px;
-      background-color: white;
+      background-color: ${Mode === 'dark' ? 'var(--background-box-color)':'var(--background-secondary-box-color)'};
       width : 300px;
       min-height: calc(100vh - 50px);
       max-height: 100vh;
@@ -72,7 +46,7 @@ const Wrapper = styled.aside`
     .nav-link {
       display: flex;
       align-items: center;
-      color: var(--text-secondary-color);
+      color: ${ Mode === 'dark' ? 'var(--text-color)':'var(--text-secondary-color)'};
       padding: 1rem 0;
       padding-left: 2.5rem;
       text-transform: capitalize;
@@ -100,3 +74,29 @@ const Wrapper = styled.aside`
     }
   }
   `;
+  return (
+    <Wrapper>
+      <div
+        className={
+          Show ? 'sidebar-container ' : 'sidebar-container show-sidebar'
+        }
+      >
+        <div className='content'>
+          <header>
+            <Logo />
+          </header>
+          <div className="h-[500px] mt-[30px] overflow-y-scroll" >
+            <NavLinks ToggleShow={ToggleShow} />
+          </div>
+
+        </div>
+
+      </div>
+    </Wrapper>
+  )
+}
+
+export default BigSidebar
+
+// box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+// in  || @media (min-width: 992px) { || with display: block;

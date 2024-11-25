@@ -19,24 +19,30 @@ export const links = [
     },
     {
       id: 4,
+      text: 'e Books',
+      path: 'books',
+      icon: <i className='bx bx-book' ></i>,
+    },
+    {
+      id: 5,
       text: 'Cources',
       path: 'cources',
       icon: <i className='bx bx-book-open' ></i>,
     },
     {
-      id: 5,
+      id: 6,
       text: 'Live Classes',
       path: 'live',
       icon: <i className='bx bxs-videos' ></i>,
     },
     {
-      id: 6,
+      id: 7,
       text: 'Attendence',
       path: 'attendence',
       icon: <i className='bx bx-calendar'></i>,
     },
     {
-      id: 7,
+      id: 8,
       text: 'Payments',
       path: 'payments',
       icon: <i className='bx bxs-offer' ></i>,
